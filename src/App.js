@@ -1,13 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Test from './components/Test'
+import RightBox from './components/rightbox/RightBox'
+import MidBox from './components/midbox/MidBox'
+import LeftBox from './components/leftbox/LeftBox'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
-      <Test/>
+      <div className="Grid">
+        <LeftBox/>
+        <MidBox/>
+        <RightBox/>
+      </div>
     </div>
   );
 }
