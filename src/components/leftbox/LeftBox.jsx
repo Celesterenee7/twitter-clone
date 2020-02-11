@@ -1,16 +1,19 @@
 import React from "react";
+import Bio from "./Bio";
+import Title from "./Title"
 
 function LeftBox(){
 
   var leftBoxStyles = {
+    backgroundColor: 'coral',
     border: 'solid',
-    height: '80%',
-    width: '80%',
-
+    textAlign: 'left',
+    marginRight: '10px'
   }
   return (
     <div style={leftBoxStyles}>
-      <h2>LeftBox</h2>
+    <Title/>
+    <Bio/>
     </div>
   );
 }

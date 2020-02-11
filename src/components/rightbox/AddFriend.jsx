@@ -2,10 +2,9 @@ import React from "react";
 
 function AddFriend(){
   var addFriendStyles = {
-    backgroundColor: 'skyBlue',
     fontFamily: 'sans-serif',
-    textAlign: 'center'
   }
+  
   var addButtonStyle = {
     color: 'red',
     align: 'center'

@@ -2,9 +2,7 @@ import React from "react";
 
 function AddPost(){
   var addPostStyles = {
-    backgroundColor: 'pink',
     fontFamily: 'sans-serif',
-
     textAlign: 'center',
 
   }

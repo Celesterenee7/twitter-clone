@@ -5,10 +5,11 @@ function MidBox(){
 
   var midBoxStyles = {
     border: 'solid',
-    height: '80%',
-    width: '80%',
-
+    backgroundColor: 'pink',
+    marginLeft: '5px',
+    marginRight: '5px',
   }
+  
   return (
     <div style={midBoxStyles}>
     <form>
