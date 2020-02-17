@@ -5,10 +5,8 @@ import Title from "./Title"
 function LeftBox(){
 
   var leftBoxStyles = {
-    backgroundColor: 'coral',
     border: 'solid',
-    textAlign: 'left',
-    marginRight: '10px'
+    marginBottom: '5px'
   }
   return (
     <div style={leftBoxStyles}>
