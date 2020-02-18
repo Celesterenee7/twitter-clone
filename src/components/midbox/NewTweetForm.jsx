@@ -1,17 +1,18 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const newTweetFormStyles = {
   fontFamily: 'sans-serif',
   textAlign: 'center',
 }
 
-function NewTweetForm(){
-  let _tweet = null;
+function NewTweetForm(props){
+  let _messages = null;
 
   function handleNewTweetFormSubmission(event) {
     event.preventDefault();
-    console.log(_tweet.value);
-    _tweet.value = '';
+    props.onNewTweetCreation({messages: _messages.value});
+    _messages.value = '';
   }
 
   return (
@@ -19,12 +20,16 @@ function NewTweetForm(){
     <form onSubmit={handleNewTweetFormSubmission}>
     <textarea
     id='tweet'
-    ref={(textarea) => {_tweet = textarea;}}/>
+    ref={(textarea) => {_messages = textarea;}}/>
     <br></br>
     <button type='submit'>Post!</button>
     </form>
     </div>
   );
 }
+
+NewTweetForm.propTypes = {
+  onNewTweetCreation: PropTypes.func
+};
 
 export default NewTweetForm;

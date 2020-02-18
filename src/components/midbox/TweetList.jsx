@@ -1,28 +1,20 @@
 import React from "react";
 import Tweet from "./Tweet";
-var masterTweetList = [
-  {
-    messages: 'Thato and Haley',
+import PropTypes from 'prop-types';
 
-  },
-  {
-    messages: 'Sleater and Kinney',
-
-  },
-  {
-    messages: 'Imani & Jacob',
-
-  }
-];
-
-function TweetList(){
+function TweetList(props){
   return (
     <div>
-    {masterTweetList.map((tweet, index) =>
-      <Tweet messages={tweet.messages} />
+    {props.tweetList.map((tweet, index) =>
+      <Tweet messages={tweet.messages}
+      key={index} />
     )}
     </div>
   );
 }
+
+TweetList.propTypes = {
+  tweetList: PropTypes.array
+};
 
 export default TweetList;

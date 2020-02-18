@@ -10,19 +10,36 @@ import NewTweetControl from './components/midbox/NewTweetControl';
 import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-    <div className="container">
-        <Header/>
-        <Switch>
-        <Route exact path='/' component = {LeftBox}/>
-        <Route exact path='/newtweet' component = {NewTweetForm}/>
-        <Route component={Error404} />
-        </Switch>
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTweetList: []
+    };
+    this.handleAddingNewTweetToList = this.handleAddingNewTweetToList.bind(this);
+  }
+
+  handleAddingNewTweetToList(newTweet){
+   var newMasterTweetList = this.state.masterTweetList.slice();
+   newMasterTweetList.push(newTweet);
+   this.setState({masterTweetList: newMasterTweetList});
+ }
+
+  render(){
+    return (
+      <div className="App">
+      <div className="container">
+      <Header/>
+      <Switch>
+      <Route exact path='/' render={()=><TweetList tweetList={this.state.masterTweetList} />} />
+      <Route path='/newtweet' render={()=><NewTweetControl onNewTweetCreation={this.handleAddingNewTweetToList} />} />
+      <Route component={Error404} />
+      </Switch>
       </div>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
